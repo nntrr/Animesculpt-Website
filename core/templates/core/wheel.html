@@ -1,0 +1,50 @@
+
+{% load static %}
+{% block content %}
+
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spin Wheel App</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/wheel.css' %}">
+</head>
+
+<body>
+  <a href="{% url 'home' %}" class="logo"> AnimeSculpt</a>
+    <div class="wrapper">
+      <div class="container">
+        <canvas id="wheel"></canvas>
+        <button id="spin-btn">Spin</button>
+        <img src="{% static 'images/wheel-row.png' %}" alt="spinner-arrow" />
+      </div>
+      <div id="final-value">
+        <p>Click On The Spin Button To Start</p>
+      </div>
+    </div>
+
+    <div class="info-wheel">
+      <h2> Note </h2>
+      <p> This spin can only be used once per day. Once used, please come back tomorrow to spin again </p>
+
+    </div>
+
+    <div class="info-wheel1">
+      <h2> Instruction </h2>
+      <p>Any discount obtained from the wheel will apply to only one product priced under £50.</p>
+      <p>If you're lucky enough to get a 100% discount, it means you'll get the product for free!</p>
+      <p>If you receive "Nope," it means you didn't get any offer. Better luck next time!</p>
+
+    </div>
+
+    <!-- Chart JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <!-- Chart JS Plugin for displaying text over chart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.1.0/chartjs-plugin-datalabels.min.js"></script>
+   
+    <script type="text/javascript" src="{% static 'js/wheel.js' %}"></script>
+</body>
+</html>
+
+    
+    {% endblock content %}
+    

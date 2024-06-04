@@ -1,0 +1,106 @@
+{% extends 'core/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
+
+<div id="cursor"></div>
+
+<div id="main">
+    <section class="home">
+        <div class="home-content">
+            <h1>Anime Merchandise</h1> 
+            <h3>Your destination !!</h3> 
+            <p>Explore a world of meticulously crafted anime merchandise at AnimeSculpt. Whether you're a seasoned collector or new to the anime universe, we have something special for you. Discover our curated selection of figures, apparel, accessories, and more, and let your love for anime shine through with every addition to your collection. Embark on an adventure with us and elevate your anime experience!</p>
+            <a href="{% url 'aboutus' %}" class="home-btn">About Us</a>  
+        </div>
+    
+        <div class="home-image">
+            <div class="asta">
+                <img src="{% static 'images/asta.png' %}">
+            </div>
+        </div>
+    </section>
+    
+    <div id="video-container"> 
+        <div id="playing">PLAYING</div>
+        <video autoplay loop muted src="{% static 'videos/video1.mp4' %}"></video>
+    </div>
+
+    <div id="homebox">
+        <div id="elem1" class="elem">
+            <img data-scroll data-scroll-speed="0.5" src="{% static 'images/image1.jpg' %}">
+            <div data-scroll data-scroll-speed="-2" class="box1">
+                <h1>Optimus Prime</h1>
+                <p>Optimus Prime is the noble leader of the Autobots, known for his bravery and unwavering commitment to peace and justice.</p>
+
+            </div>
+        </div>
+        <div id="elem2" class="elem">
+            <img data-scroll data-scroll-speed="0.5"  src="{% static 'images/image2.jpg' %}">
+            <div data-scroll data-scroll-speed="-2" class="box2">
+                <h1>Iron Giant</h1>
+                <p>The Iron Giant is a massive robot with a heart of gold. Choosing to be a protector rather than a weapon of destruction.</p>
+
+            </div>
+        </div>
+        <div id="elem3" class="elem">
+            <img data-scroll data-scroll-speed="0.5"  src="{% static 'images/image3.jpg' %}">
+            <div data-scroll data-scroll-speed="-2" class="box3">
+                <h1>Son-Goku</h1>
+                <p>Goku, also known as Kakarot, is a powerful Saiyan warrior renowned for his strength and determination in defending Earth and his friends.</p>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="text-box">
+        <h1>Discover Our Collection</h1>
+        <p> Explore our wide range of premium anime merchandise.<br> From manga and anime episodes to stylish t-shirts and intricate anime figures, <br> we have something for every fan. </p>
+        <a href="{% url 'store' %}" class="text-btn">Check It Out</a> 
+    </div>
+     
+    
+    
+
+    
+
+
+    <div id="info_box">
+
+        <div class="info" id="info1" href="{% url 'store' %}">
+        <img src="{% static 'images/info1.png' %}">
+        
+        <h1>Anime figures</h1>
+        </div>
+        <div class="info" id="info2" href="{% url 'store' %}">
+            <img src="{% static 'images/info2.png' %}" href="{% url 'store' %}">
+            <h1> manga</h1>
+        </div>
+        <div class="info" id="info3">
+            <img src="{% static 'images/info3.png' %}" href="{% url 'store' %}">
+            <h1>Anime Episodes </h1>
+        </div>
+        <div class="info" id="info4">
+            <img src="{% static 'images/info4.png' %}" href="{% url 'store' %}">
+            <h1>T-shirts</h1>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+
+<script>
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector('#main'),
+        smooth: true
+    });
+</script>
+
+{% endblock content %}

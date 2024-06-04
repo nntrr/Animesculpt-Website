@@ -1,0 +1,341 @@
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    background-color: yellowgreen;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+/* Register page */
+
+.Re-margin{
+    position: relative;
+    background: transparent;
+    text-align: center;
+    width: 360px;
+    height: 430px;
+    top: 10%;
+    right: 5%;
+    overflow: hidden;
+ 
+}
+
+.register-container {
+    position: absolute;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    margin-top: 2.4%;
+    margin-left: 2.6%;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    
+}
+
+.register-container-bg{
+    content: "";
+    position: absolute;
+    padding: 20px;
+    top:-50%;
+    left: -50%;
+    width: 360px;
+    height: 360px;
+    background: blueviolet;
+    animation: rotating 6s linear infinite;
+    transform-origin: bottom right;
+    
+
+
+}
+
+.register-container h2 {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
+    margin-top: -5%;
+}
+
+.register-btn {
+    width: 100%;
+    background-color: yellowgreen;
+    color: #eaeaea;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid yellowgreen;
+    font-size: 16px;
+    color: #eaeaea;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-btn:hover {
+    background: transparent;
+    color: blueviolet;
+    
+}
+
+#login-link {
+    color: blueviolet;
+    font-style: bold;
+    text-decoration: none;
+    font-weight: 600;
+}
+#login-link:hover {
+    cursor: pointer;
+    border: 0.5px solid blueviolet;
+    color: yellowgreen;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+
+    margin-top: -5%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid  yellowgreen;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border: 3px solid blueviolet;
+}
+
+
+
+
+#messages {
+    color: orangered;
+    font-family: 'Poppins', sans-serif;
+    font: bold;
+    font-size: 15px;
+}
+
+.Re-heading{
+    margin-top: -35%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 28%;
+    font-size: 20px;
+    z-index: 9;
+}
+
+.rwelcome-text {
+    color: black; 
+}
+
+.rbrand-text {
+    color: blueviolet; 
+}
+
+.rs-text{
+    color: #eaeaea; 
+
+}
+
+
+
+
+
+
+
+
+/* login page */
+
+.margin{
+    position: relative;
+    background: transparent;
+    text-align: center;
+    width: 360px;
+    height: 360px;
+    top: 10%;
+    right: 5%;
+    overflow: hidden;
+}
+
+
+.login-container {
+    position: absolute;
+    background-color: #eaeaea;
+    border-radius: 8px;
+    margin-top: 2.4%;
+    margin-left: 2.6%;
+    padding: 20px;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    
+}
+
+
+.login-container-bg{
+    content: "";
+    position: absolute;
+    padding: 20px;
+    top:-50%;
+    left: -50%;
+    width: 360px;
+    height: 360px;
+    background: blueviolet;
+    animation: rotating 6s linear infinite;
+    transform-origin: bottom right;
+    
+}
+
+.login-container h2 {
+    color: black;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 30px;
+    
+}
+
+.form-control {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #9acd32;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    outline: none;
+    border: 3px solid  blueviolet;
+}
+
+.login-btn {
+    width: 100%;
+    background-color: yellowgreen;
+    color: #eaeaea;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid yellowgreen;
+    font-size: 16px;
+    color: #eaeaea;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 6%;
+}
+
+.login-btn:hover {
+    background: transparent;
+    color: blueviolet;
+}
+
+#signup-link {
+    color: blueviolet;
+    font-style: bold;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#signup-link:hover {
+    cursor: pointer;
+    border: 0.5px solid blueviolet;
+    color: yellowgreen;
+}
+
+
+.heading{
+    margin-top: -35%;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 28%;
+    font-size: 20px;
+    z-index: 9;
+}
+
+.welcome-text {
+    color: black; 
+}
+
+.brand-text {
+    color: blueviolet; 
+}
+
+.s-text{
+    color: #eaeaea; 
+
+}
+
+
+
+
+
+
+.login-asta img {
+
+    position: absolute;
+    top: 15%;
+    right: 51%;
+    max-width: 39%;
+    opacity: 0;
+    animation: astaGo 1s ease forwards;
+    animation-delay: 0.5s;
+    
+
+}
+
+.asta img{
+    position: absolute;
+    top: 15%;
+    right: 55%;
+    max-width: 39%;
+    opacity: 0;
+    animation: astaGo 1s ease forwards;
+    animation-delay: 0.5s;
+    
+    
+}
+
+
+@keyframes rotating 
+{
+    0%
+    {
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+@keyframes astaGo{
+
+    0%{
+        transform: translate(300px, -300px) scale(0) 
+    }
+
+    100%{
+        transform: translate(0, 0) scale(1) ;
+        opacity: 1;
+    }
+}
+

@@ -1,0 +1,90 @@
+{% extends 'core/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="checkout_box">
+
+
+	<div class="box-element_R">
+		<div class="username"> <span>Hello, {{ request.user }} !!!</span> </div>
+		<br>
+		<form>
+			<div id="shipping-info">
+				<hr>
+				<p>Shipping Information:</p>
+				<hr>
+				<div class="form-field">
+					<input class="form-control" type="text" name="address" placeholder="Address..">
+				</div>
+				<div class="form-field">
+					<input class="form-control" type="text" name="city" placeholder="City..">
+				</div>
+				<div class="form-field">
+					<input class="form-control" type="text" name="state" placeholder="State..">
+				</div>
+				<div class="form-field">
+					<input class="form-control" type="text" name="zipcode" placeholder="Zip code..">
+				</div>
+			</div>
+			<input class="sub-btn" type="submit">
+		</form>
+		<hr>
+		<div id="payment-info" class="payment-info">
+			<large>Paypal Options</large>
+			<!--<button id="make-payment">Make payment</button>-->
+			<div id="paypal-button-container"></div>
+		</div>
+	</div>
+
+
+	<div class="box-element_top">
+		<hr>
+		<br>
+		<a class="Back-Cart" href="{% url 'cart' %}">&#x2190; Back to Cart</a>
+		<br><br>
+		<hr>
+		<h3>Order Summary</h3>
+		<hr>
+		<br>
+		<h5>Items:   {{order.get_cart_items}}</h5>
+		<h5>Total:   £{{order.get_cart_total|floatformat:2}}</h5>
+		<hr>
+		<br>
+
+		<div class="title"> <h1>Double Check Your Products</h1> </div>
+
+		
+	</div>
+
+				
+	<div class="box-element_L">
+
+		{% for item in items %}
+
+		<div class="Checkout-row">
+			<div style="flex: 2;">
+				<img class="row-image" src="{{ item.product.imageURL }}" style="width: 550px;">
+			</div>
+			<div class="product-name" style="flex:4"><p>{{item.product.name}}</p></div>
+			<div style="flex:1"><p>£{{item.product.price|floatformat:2}}</p></div>
+			<div class="quantity" style="flex:1"><p>x{{item.quantity}}</p></div>
+		</div>
+		{% endfor %}
+		
+	</div>
+	
+</div>
+    
+
+
+	<!-- Include PayPal SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AcEgrqSrRMU3353bi2BCZjo6Z0GoAKj4LaE7tJIwnuf9A0iN75C4WP2grppH78hk5Hwq5YbNjt3_3LuF&currency=GBP"></script>
+
+
+
+	<script type="text/javascript" src="{% static 'js/checkout.js' %}"></script>
+
+{% endblock content %}
+
+

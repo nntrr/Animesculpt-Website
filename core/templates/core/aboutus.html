@@ -1,0 +1,28 @@
+{% extends 'core/main.html' %}
+{% load static %}
+{% block content %}
+
+<section class="aboutUs">
+    <div class="aboutUs-content"> 
+        <div class= "Welcome-text">
+            <h1>About Us</h1>
+            <p>Welcome to AnimeSculpt, your ultimate destination for all things anime! Founded by passionate anime enthusiasts, AnimeSculpt is dedicated to providing you with top-quality merchandise that celebrates the vibrant world of anime.</p>
+        </div>
+
+        <div class= "mission-text">
+            <h2>Our Mission</h2>
+            <p>At AnimeSculpt, our mission is to bring joy and excitement to anime fans worldwide. We strive to offer a diverse selection of meticulously crafted merchandise that reflects the essence and beauty of your favorite anime characters and series.</p>
+            
+        </div>
+
+        <div class= "Coll-text">
+            <h2>Our Collection</h2>
+            <p>Explore our extensive collection of premium anime merchandise, carefully curated to cater to all your fandom needs. From beautifully detailed figures to authentic manga and stylish apparel, we have something special for every anime lover.</p>
+            <p>Explore our wide range of premium anime merchandise, from manga and anime episodes to stylish t-shirts and intricate anime figures. With AnimeSculpt, elevate your anime experience to new heights!</p>
+            <a href="{% url 'store' %}" class="co-btn">Check It Out</a>
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

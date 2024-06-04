@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <meta charset ="UTF-8">
+    
+    <title>AnimeSculpt | website </title>
+    <link rel="shortcut icon" href="{% static 'images/icon.jpg' %}" type="image/x-icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    
+
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="{% url 'home' %}" class="logo"><span class="anime-text">Anime</span><span class="sculpt-text">Sculpt</span></a>
+
+
+        <nav class="navbar">
+            
+            <a href="{% url 'home' %}" style="--i:1;">Home</a>
+            <a href="{% url 'aboutus' %}" style="--i:2;"> About Us</a>
+            <a href="{% url 'store' %}" style="--i:3;">Products</a>
+            <a href="{% url 'rewards' %}" style="--i:4;">Spin the Wheel</a>
+        </nav>
+
+
+        <div class="cart">
+            <a href="{% url 'cart' %}"  class="cart-link" style="--i:1">
+                <img id="cart-icon" src="{% static 'images/cart.png' %}" alt="Cart" style="width: 60px" style="--i:1"; class="cart-image">
+                <p id="cart-total" class="cart-total">{{ cartItems }}</p>
+            </a>
+        </div>
+
+        <div class="out">
+            <a href="{% url 'logout' %}" class="out-link">
+                <img src="{% static 'images/logout.png' %}" class="out-image">
+                <span class="hover-text">Logout</span>
+            </a>
+        </div>
+        
+        
+        
+
+    </header>
+    
+        
+
+
+    <script type="text/javascript">
+        var user = '{{request.user}}'
+
+        function getToken(name) {   // from documentaion of django csrf token ( sendig the data that the item was added to cart)
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+             
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        var csrftoken = getToken('csrftoken')
+
+        function getCookie(name) {
+            // Split cookie string and get all individual name=value pairs in an array
+            var cookieArr = document.cookie.split(";");
+
+            // Loop through the array elements
+            for(var i = 0; i < cookieArr.length; i++) {
+                var cookiePair = cookieArr[i].split("=");
+
+                /* Removing whitespace at the beginning of the cookie name
+                and compare it with the given string */
+                if(name == cookiePair[0].trim()) {
+                    // Decode the cookie value and return
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+
+            // Return null if not found
+            return null;
+        }
+        var cart = JSON.parse(getCookie('cart'))
+
+        if (cart == undefined){
+            cart = {}
+            console.log('Cart Created!', cart)
+            document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+        }
+        console.log('Cart:', cart)
+    
+    </script>
+    
+
+    <div class="container mb-4">
+        {% block content %}
+       
+        {% endblock content %}
+    </div>
+
+
+
+    <script type="text/javascript" src="{% static 'js/cart.js' %}"></script>
+   
+</body>
+</html>

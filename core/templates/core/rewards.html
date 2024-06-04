@@ -1,0 +1,14 @@
+{% extends 'core/home.html' %}
+{% load static %}
+{% block content %}
+<body >
+    <section class="wheel">
+        <div class="wheel-content"> 
+            <h1>Spin the Wheel</h1>
+            <h3>Test Your Luck!</h3>
+            <p>Embark on an adventure of chance with our Spin the Wheel game.Take a risk and see where fate leads you.Will you be rewarded with exciting prizes? or will luck elude you this time? Test your luck now and experience the thrill!</p>
+            <a href="{% url 'wheel' %}" class="wheel-btn">Spin Now</a>
+        </div>
+    </section>
+</body>
+{% endblock content %}

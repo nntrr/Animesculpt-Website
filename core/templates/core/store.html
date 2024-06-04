@@ -1,0 +1,64 @@
+{% extends 'core/main.html' %}
+{% load static %}
+
+{% block extra_head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="store-title">
+        <div id="store-img">
+            <img src="{% static 'images/Saitama.png' %}" alt="Saitama Image">
+            <div id="eye-white" class= "eye1">
+                <div id="eye-ball"></div>
+            </div>
+            <div id="eye-white1" class= "eye2">
+                <div id="eye-ball1"></div>
+            </div>
+        </div>
+    <span>Hello, {{ request.user }} !!!</span>
+        
+    </div>
+</div>
+
+<div class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+        <h6 class="product-name">{{ product.name }}</h6>
+        <img class="product-image" src="{{ product.imageURL }}" alt="{{ product.name }}">
+        <div class="product-details">
+            <button 
+                data-product="{{ product.id }}" 
+                data-action="add" 
+                class="btn btn-outline-secondary add-btn update-cart" 
+                aria-label="Add to Cart"
+            >
+                Add to Cart
+            </button>
+           
+            <span class="product-price">£{{ product.price|floatformat:2 }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script type="text/javascript" src="{% static 'js/style.js' %}"></script>
+<script>
+    var eyes = document.querySelectorAll("#eye-ball, #eye-ball1");
+    document.onmousemove = function(event) {
+        var width = window.innerWidth;
+        var x = event.clientX;
+        var a = x / width * 100;
+
+        var height = window.innerHeight;  
+        var y = event.clientY;
+        var b = y / height * 100;
+
+        eyes.forEach(function(eye) {
+            eye.style.cssText = "left:" + a + "%; top: " + b + "%;" + "transform:translate(-"+a+"%,-"+b+"%)"; 
+        });
+    };
+</script>
+{% endblock content %}

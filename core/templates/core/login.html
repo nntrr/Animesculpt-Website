@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeSculpt - Login</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login_style.css' %}">
+    
+</head>
+<body>
+
+    
+
+    <div class="login-asta">
+        <img src="{% static 'images/kenpachi.png' %}">
+    </div>
+
+    <div class="heading">
+        <h1><span class="welcome-text">Welcome to</span> <span class="brand-text">Anime</span><span class="s-text">Sculpt</span></h1>
+    </div>
+    
+    
+
+   
+
+    <div class= "margin"> 
+
+        <div class= "login-container-bg"></div>
+        <div class="login-container">
+    
+    
+            <h2> Sing in</h2>
+            <form method="POST" action="">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Username" class="form-control">
+                <input type="password" name="password" placeholder="Password" class="form-control">
+                <input type="submit" name="login" class="login-btn" value="Login">
+            </form>
+            <p>Don't have an account? <a href="{% url 'register' %}" id="signup-link">Register</a></p>
+            {% for message in messages %}
+                <p id="messages">{{ message }}</p>
+            {% endfor %}
+            
+        </div>
+
+
+    </div>
+
+    
+</body>
+</html>
